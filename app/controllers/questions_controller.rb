@@ -1,2 +1,24 @@
 class QuestionsController < ApplicationController
+  def index
+    @questions = Questions.all
+  end
+  
+  def new
+    @question = Question.new
+  end
+  
+  def create
+    @question = Quiz.questions.build(question_params)
+    if @question.save
+      redirect_to createAnswer_url
+    else
+      render static_pages/home
+    end
+  end  
+  
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def question_params
+      params.require(:question).permit(:title)
+    end
 end
