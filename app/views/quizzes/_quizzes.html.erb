@@ -1,0 +1,8 @@
+<li id="quiz-<%= quiz.id %>">
+  <%= link_to gravatar_for(User.find(quiz.user_id), size: 50), User.find(quiz.user_id) %>
+  <span class="user"><%= link_to User.find(quiz.user_id).name, User.find(quiz.user_id) %></span>
+  <span class="title"><%= quiz.title %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(quiz.created_at) %> ago.
+  </span>
+</li>

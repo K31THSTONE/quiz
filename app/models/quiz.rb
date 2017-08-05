@@ -1,7 +1,6 @@
 class Quiz < ApplicationRecord
-    serialize :question_ids, Array
     belongs_to :user
-    validates :title,  presence: true 
+    has_many :questions, dependent: :destroy
+    validates :title,  presence: true, allow_nil: false 
     validates :user_id, presence: true
-    validates :question_ids, presence: true
 end    
