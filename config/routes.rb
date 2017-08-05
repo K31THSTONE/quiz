@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get  '/login',    to: 'sessions#new'
   post '/login',    to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get  '/createQuiz', to: 'quizzes#new'
+  post '/createQuiz', to: 'quizzes#create'
   
   #<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   resources :users

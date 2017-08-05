@@ -1,0 +1,17 @@
+<% provide(:title, 'New Answers') %>
+<h1>New Answers</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@answer) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :content%>
+      <%= f.text_field :content, class: 'form-control' %>
+      
+      <%= f.label :correct%>
+      <input type="checkbox" name="Correct?" value="Correct?" checked> This answer is correct<br>    
+      <%= f.submit "Submit the Answer", class: "btn btn-primary" %>
+      <%= link_to "Head back Home", root_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
