@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
   end
   
   def create
-    @answer = Question.redorder(created_at :desc).first.answers.build(answer_params)
+    @answer = Question.redorder("answers.created_at :desc").first.answers.build(answer_params)
     if @answer.save
       redirect_to root_url
     else
