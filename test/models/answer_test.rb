@@ -2,10 +2,10 @@ require 'test_helper'
 
 class AnswerTest < ActiveSupport::TestCase
   def setup
-    @answer = Answer.new(content: "Patriots", correct: true)
+    @answer = answers(:one)
   end
   
-  test "content must be present"
+  test "content must be present" do
     @answer.content = nil
     assert_not @answer.valid?
   end

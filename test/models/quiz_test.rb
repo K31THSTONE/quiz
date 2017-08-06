@@ -2,7 +2,7 @@ require 'test_helper'
 
 class QuizTest < ActiveSupport::TestCase
  def setup
-   @quiz- = Quiz.new(title: "Most Recent Super Bowl Facts")
+  @quiz = quizzes(:one)
  end
  
  test "title must be present" do
