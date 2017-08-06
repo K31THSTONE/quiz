@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Questions.all
+    @questions = Question.all
   end
   
   def new
@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    @question = Quiz.questions.build(question_params)
+    @question = Quiz.redorder(created_at :desc).first.questions.build(question_params)
     if @question.save
       redirect_to createAnswer_url
     else

@@ -16,10 +16,17 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get  '/createQuiz', to: 'quizzes#new'
   post '/createQuiz', to: 'quizzes#create'
+  get  '/takeQuiz',   to: 'quizzes#take'
+  get  '/createQuestion', to: 'questions#new'
+  post '/createQuestion', to: 'question#create'
+  get  '/createAnswer',   to: 'answer#new'
+  post '/createAnswer',   to: 'answer#create'
   
-  #<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :quizzes
+  resources :questions
+  resources :answers
+  
 end

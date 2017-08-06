@@ -8,9 +8,11 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
-  config.action_mailer.default_url_options = { :host => '69.251.75.122', :port => 3000 }
+  
+  host = host = 'quiz-app-goliff.c9users.io'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :sendmail
   
   # Show full error reports.
   config.consider_all_requests_local = true
