@@ -8,9 +8,9 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    @question = Quiz.questions.build(question_params)
+    @question = Quiz.first.questions.build(question_params)
     if @question.save
-      redirect_to createAnswer_url
+      redirect_to new_answer_url
     else
       render static_pages/home
     end

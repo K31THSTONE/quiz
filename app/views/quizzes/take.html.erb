@@ -1,0 +1,34 @@
+<h1>Good Luck!</h1>
+
+<%= @quiz = Quiz.reorder('created_at asc').first %>
+<%= @question = Question.find(@quiz.id) %>
+<%= @answer = Answer.find(@question.id)  %>
+
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @quiz.title %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @question.title %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= link_to @answer.content, root_path, class: "btn btn-lg btn-primary" %>
+      </h1>
+    </section>
+  </aside>
+</div>

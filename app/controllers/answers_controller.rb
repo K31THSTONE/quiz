@@ -7,8 +7,12 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
   
+  def show
+    @answer = Answer.find(params[:id])
+  end
+  
   def create
-    @answer = Question.answers.build(answer_params)
+    @answer = Question.first.answers.build(answer_params)
     if @answer.save
       redirect_to root_url
     else

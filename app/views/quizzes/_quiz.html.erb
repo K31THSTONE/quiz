@@ -4,10 +4,6 @@
   <span class="title"><%= quiz.title %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(quiz.created_at) %> ago.
-    <% if current_user == User.find(quiz.user_id) %>
-      <%= link_to "delete", quiz, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-    <% end %>
-
+    <%= link_to "Take", takeQuiz_path %>
   </span>
 </li>

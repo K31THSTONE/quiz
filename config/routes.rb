@@ -16,12 +16,12 @@ Rails.application.routes.draw do
   delete '/logout',       to: 'sessions#destroy'
   get  '/createQuiz',     to: 'quizzes#new'
   post '/createQuiz',     to: 'quizzes#create'
-  get  '/takeQuiz',       to: 'quizzes#take'
+  get  '/listQuiz',       to: 'quizzes#list'
   get  '/createQuestion', to: 'questions#new'
   post '/createQuestion', to: 'question#create'
   get  '/createAnswer',   to: 'answer#new'
   post '/createAnswer',   to: 'answer#create'
-  get  '/takeQuiz',       to: 'quiz#take'
+  get  '/takeQuiz',       to: 'quizzes#take'
   
   resources :users
   resources :account_activations, only: [:edit]
