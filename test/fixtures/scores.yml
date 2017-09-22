@@ -2,10 +2,10 @@
 
 one:
   value: 1
-  user_id: one
   quiz_id: one
+  user_id: one
 
 two:
   value: 1
-  user_id: two
   quiz_id: two
+  user_id: two 
